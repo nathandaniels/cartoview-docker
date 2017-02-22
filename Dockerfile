@@ -18,9 +18,12 @@ RUN apt-get install -y swig libssl-dev dpkg-dev netcat gcc \
                 python-pylibmc \
         --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-
-WORKDIR /cartoview_project
+RUN mkdir /code
+WORKDIR /code
 
 # Install our requirements.
 RUN pip install GDAL==1.10 --global-option=build_ext --global-option="-I/usr/include/gdal"
+RUN pip install geonode==2.5.15
 RUN pip install cartoview
+RUN pip install django-geonode-client
+RUN pip install Uwsgi
