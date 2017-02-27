@@ -28,3 +28,4 @@ RUN pip install geonode==2.5.15
 RUN pip install cartoview
 RUN pip install django-geonode-client
 RUN pip install Uwsgi
+CMD ["/bin/bash"]
