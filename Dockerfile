@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+MAINTAINER Cartologic Development Team
 ENV TERM xterm
 RUN apt-get update
 RUN locale-gen ru_RU.UTF-8 && update-locale
