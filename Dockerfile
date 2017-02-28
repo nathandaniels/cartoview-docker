@@ -5,7 +5,7 @@ RUN apt-get update
 RUN locale-gen ru_RU.UTF-8 && update-locale
 RUN apt-get -qq -y install wget curl git vim build-essential build-essential python-dev postgresql-client
 RUN apt-get install software-properties-common python-software-properties -y
-RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable 
+RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 RUN apt-get update
 RUN apt-get upgrade
 RUN apt-get  install gdal-bin python-gdal -y
@@ -23,8 +23,10 @@ RUN apt-get update && apt-get install -y \
                 libmemcached-dev libsasl2-dev zlib1g-dev \
                 python-pylibmc \
 	--no-install-recommends && rm -rf /var/lib/apt/lists/*
-#Node Support
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && bash nodesource_setup.sh -y && apt-get install nodejs && npm install -g bower
+RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN bash nodesource_setup.sh -y
+RUN apt-get install nodejs
+RUN npm install -g bower
 RUN mkdir /code
 WORKDIR /code
 RUN pip install geonode==2.5.15
