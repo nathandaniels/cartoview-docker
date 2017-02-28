@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
                 libmemcached-dev libsasl2-dev zlib1g-dev \
                 python-pylibmc \
 	--no-install-recommends && rm -rf /var/lib/apt/lists/*
+#Node Support
 RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && bash nodesource_setup.sh -y && apt-get install nodejs && npm install -g bower
 RUN mkdir /code
 WORKDIR /code
