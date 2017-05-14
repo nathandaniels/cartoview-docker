@@ -2,12 +2,13 @@ FROM ubuntu:16.04
 MAINTAINER Cartologic Development Team
 ENV TERM xterm
 RUN apt-get update
-RUN locale-gen ru_RU.UTF-8 -y && update-locale -y
+RUN apt-get install locales -y
+RUN locale-gen ru_RU.UTF-8 && update-locale
 RUN apt-get -qq -y install wget curl git vim build-essential build-essential python-dev postgresql-client
 RUN apt-get install software-properties-common python-software-properties -y
 RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get upgrade -y
 RUN apt-get  install gdal-bin python-gdal -y
 RUN apt-get install python-pip -y
 RUN pip install GDAl
