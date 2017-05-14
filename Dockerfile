@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Cartologic Development Team
 ENV TERM xterm
 RUN apt-get update
-RUN locale-gen ru_RU.UTF-8 && update-locale
+RUN locale-gen ru_RU.UTF-8 -y && update-locale -y
 RUN apt-get -qq -y install wget curl git vim build-essential build-essential python-dev postgresql-client
 RUN apt-get install software-properties-common python-software-properties -y
 RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
