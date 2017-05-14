@@ -30,8 +30,9 @@ RUN npm install -g bower
 RUN mkdir /code
 WORKDIR /code
 RUN pip install geonode==2.5.15
-RUN pip install cartoview
+RUN pip install cartoview -U
 RUN pip install django-osgeo-importer
 RUN pip install django-geonode-client
-RUN pip install Uwsgi
+# better performance than uwsgi
+RUN pip install cherrypy -U
 CMD ["/bin/bash"]
