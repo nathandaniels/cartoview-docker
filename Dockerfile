@@ -26,11 +26,11 @@ RUN apt-get update && apt-get install -y \
 	--no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh -y
-RUN apt-get install nodejs
+RUN apt-get install nodejs -y
 RUN npm install -g bower
 RUN mkdir /code
 WORKDIR /code
-RUN pip install geonode==2.5.15
+RUN pip install geonode -U
 RUN pip install cartoview -U
 RUN pip install django-osgeo-importer
 RUN pip install django-geonode-client

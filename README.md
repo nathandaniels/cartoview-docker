@@ -6,4 +6,4 @@ Cartoview extends the popular [GeoNode](http://geonode.org/) SDI to provide the 
 [How to use and install](http://cartologic.github.io/cartoview/)
 > ubuntu 16.04
 > included python 2.7.12
-> included Geonode 2.5.15
+> included Geonode 2.6
