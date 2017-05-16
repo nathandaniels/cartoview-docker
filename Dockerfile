@@ -11,7 +11,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get  install gdal-bin python-gdal -y
 RUN apt-get install python-pip -y
-RUN pip install GDAl
+RUN pip install GDAl --no-cache-dir
 RUN apt-get update && apt-get install -y \
 		gcc \
 		gettext \
@@ -30,10 +30,10 @@ RUN apt-get install nodejs -y
 RUN npm install -g bower
 RUN mkdir /code
 WORKDIR /code
-RUN pip install geonode -U
-RUN pip install cartoview -U
-RUN pip install django-osgeo-importer
-RUN pip install django-geonode-client
+RUN pip install geonode -U --no-cache-dir
+RUN pip install cartoview -U --no-cache-dir
+RUN pip install django-osgeo-importer --no-cache-dir
+RUN pip install django-geonode-client --no-cache-dir
 # better performance than uwsgi
 RUN pip install cherrypy -U
 CMD ["/bin/bash"]
