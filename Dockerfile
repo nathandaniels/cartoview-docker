@@ -31,10 +31,12 @@ RUN apt-get install nodejs -y
 RUN npm install -g bower
 RUN mkdir /code
 WORKDIR /code
-RUN pip install cartoview -U --no-cache-dir
+RUN pip install cartoview  --no-cache-dir
 RUN pip install django-osgeo-importer --no-cache-dir
 RUN pip install django-geonode-client --no-cache-dir
-RUN pip install geonode --no-cache-dir
+RUN pip install geonode==2.6.1 --no-cache-dir
+RUN pip install django-jsonfield
+RUN pip install django-jsonfield-compat
 # better performance than uwsgi
-RUN pip install cherrypy -U
+RUN pip install cherrypy
 CMD ["/bin/bash"]
