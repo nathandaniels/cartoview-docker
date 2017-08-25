@@ -6,6 +6,7 @@ RUN apt-get install locales -y
 RUN locale-gen ru_RU.UTF-8 && update-locale
 RUN apt-get -qq -y install wget curl git vim build-essential build-essential python-dev postgresql-client
 RUN apt-get install software-properties-common python-software-properties -y
+RUN apt-get install lsof -y
 RUN add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 RUN apt-get update
 RUN apt-get upgrade -y
