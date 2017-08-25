@@ -34,7 +34,7 @@ WORKDIR /code
 RUN pip install cartoview -U --no-cache-dir
 RUN pip install django-osgeo-importer --no-cache-dir
 RUN pip install django-geonode-client --no-cache-dir
-RUN pip install geonode -U --no-cache-dir
+RUN pip install geonode --no-cache-dir
 # better performance than uwsgi
 RUN pip install cherrypy -U
 CMD ["/bin/bash"]
