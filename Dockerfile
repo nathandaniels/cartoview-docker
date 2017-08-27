@@ -29,6 +29,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh -y
 RUN apt-get install nodejs -y
 RUN npm install -g bower
+RUN npm install -g grunt
 RUN mkdir /code
 WORKDIR /code
 RUN pip install cartoview  --no-cache-dir
